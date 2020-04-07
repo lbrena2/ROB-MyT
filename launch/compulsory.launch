@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<!-- Start the simulation env and tasks controller-->
+<launch>
+	<!-- launch task1 controller-->
+	<arg name="robot_name" default="thymio10" />
+	<!-- nodes are exectued -->
+	<node pkg="homework2" name="thymio_controller" type="controller3.py" output="screen">
+    	<!-- paramters must be set in the launchfile -->
+    	<param name="robot_name" value="/$(arg robot_name)" />
+	</node>
+</launch>
+

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- Start the simulation env and tasks controller-->
+<launch>
+
+	<include file="$(find thymioid_description)/launch/gazebo_bringup.launch">
+    <arg name="name" value="thymio20"/>
+    <arg name="pose" value="-x 1  -y -1 -z 0 -Y 1.6"/>
+  	</include>
+
+	<!-- nodes are exectued -->
+	
+
+	<node pkg="homework2" name="thymio_controller" type="bonus_controller1.py" output="screen">
+    	<!-- paramters must be set in the launchfile -->
+    	<param name="robot_name" value="/thymio10" />
+	</node>
+	<node pkg="homework2" name="thymio_controller20" type="bonus_controller1.py" output="screen">
+    	<param name="robot_name" value="/thymio20" />
+	</node>
+	
+</launch>
+
